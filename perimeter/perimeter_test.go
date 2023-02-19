@@ -17,8 +17,20 @@ func TestPerimeter(t *testing.T) {
 func TestArea(t *testing.T) {
 	t.Run("should return area value", func(t *testing.T) {
 		rectangle := Rectangle{12.0, 6.0}
-		got := Area(rectangle)
+		got := rectangle.Area()
 		want := 72.0
+
+		if got != want {
+			t.Errorf("got %.2f want %2f", got, want)
+		}
+	})
+}
+
+func TestCircle(t *testing.T) {
+	t.Run("should return circle value", func(t *testing.T) {
+		circle := Circle{10}
+		got := circle.Area()
+		want := 314.1592653589793
 
 		if got != want {
 			t.Errorf("got %.2f want %2f", got, want)
